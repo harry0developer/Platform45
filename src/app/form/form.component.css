@@ -1,0 +1,145 @@
+.form {
+	background-color: #fff;
+	margin: 0 40px;
+	height: 100%;
+}
+.row.input {
+	margin: 30px 0;
+}
+.male {
+	background: url('../../assets/img/male-dark.svg') no-repeat center;
+	background-color: #f5f8f9;
+}
+
+.female {
+	background: url('../../assets/img/female-dark.svg') no-repeat center;
+	background-color: #f5f8f9;
+}
+
+.male-active {
+	background: url('../../assets/img/male-white.svg') no-repeat center;
+	background-color: #b1bfcd;
+	border: 2px solid #f5f8f9
+}
+
+.female-active {
+	background: url('../../assets/img/female-white.svg') no-repeat center;
+	background-color: #b1bfcd;
+	border: 2px solid #f5f8f9
+}
+
+.inactive-package {
+	background: url('../../assets/img/package-dark.svg') no-repeat center;
+	background-color: #f5f8f9;
+}
+
+
+.active-package {
+	background: url('../../assets/img/package-white.svg') no-repeat center;
+	background-color: #b1bfcd;
+} 
+
+.membership-label {
+	padding-left: 20px;
+}
+
+.package, .gender, .buttons {
+	white-space: nowrap;
+  	overflow: hidden
+}
+.package .col, .gender .col-sm-12 {
+	margin: 5px 0;
+}
+.male, .female, .active-package , .inactive-package  {
+	width: 50px;
+	height: 50px;
+	border-radius: 100%;
+	display: inline-block;
+	vertical-align: middle;
+}
+.radio label{
+	margin-left: 14px;
+}
+
+
+input[type=text]:focus {
+	background-color: #fff !important;
+}
+
+.radio-label {
+	padding-left: 20px;
+}
+
+.col-6 {
+	padding: 0 10px;
+}
+
+.form-control {
+	border: none;
+	background-color: #f5f8f9;
+	padding: 15px;
+}
+.form-btn {
+	width: 150px;
+	height: 53px;
+	border-radius: 5.3px;
+}
+
+input.date-of-birth {
+    background-image: url('../../assets/img/date.svg');
+    background-repeat: no-repeat;
+    text-indent: 20px;
+}
+
+.cancel {
+	color: #373d40;
+	background-color: #f5f8f9; 
+}
+
+.save {
+	color: #fff;
+	background-color: #60e6c5;
+}
+
+.buttons {
+	margin: 60px 0;
+	width: 60%;
+	float: right;
+}
+
+.buttons button {
+	margin: 4px 0;
+}
+
+button.save:hover {
+	background-color: #49c8a8;
+}
+
+button.cancel:hover {
+	background-color: #cad7dd;
+}
+
+.inactive-package:hover, .male:hover, .female:hover {
+	border: solid 1.5px #b3c1ce;
+}
+
+input:hover {
+	border: #b3c1ce solid 1.4px ;
+}
+
+@media only screen and (max-width: 991px) {
+	.buttons {
+		width: 85%;
+		float: right;
+	}
+}
+
+
+@media only screen and (max-width: 767px) {
+	.buttons {
+		width: 100%;
+	}
+	.buttons button{
+		width: 100%;
+	}
+}

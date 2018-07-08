@@ -1,0 +1,106 @@
+<div class="form" *ngIf="!toggle">
+  <form [formGroup]="userForm">
+    <div class="row input"> <!-- Name-->
+      <div class="col-md-4 col-sm-12">
+        <label for="inputEmail">Email</label>
+      </div>
+      <div class="col-md-8 col-sm-12">
+        <input type="text"  formControlName="name" id="name" placeholder="harry@email.com" class="form-control">
+      </div>
+    </div>
+
+    <div class="row radio"> <!-- Gender-->
+      <div class="col-4">
+        <label for="inputGender">Gender</label>
+      </div>
+      <div class="col-8">
+        <div class="row gender">
+          <div class="col-md-6 col-sm-12">
+            <a id="male" (click)="markActiveGender('male')" [ngClass]="male ? 'male-active' : '' " class="male"></a>
+            <span class="radio-label">Male</span>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <a id="female" (click)="markActiveGender('famale')" [ngClass]="female ? 'female-active' : '' " class="female"></a>
+            <span class="radio-label">Female</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row input"> <!-- Date Of Birth-->
+      <div class="col-md-4 col-sm-12">
+        <label for="dateOfBirth">Date of Birth</label>
+      </div>
+      <div class="col-md-8 col-sm-12">
+        <input type="date"  formControlName="dob" id="dob" placeholder="01/01/2018" class="form-control">
+      </div>
+    </div>
+
+    <div class="row input"> <!-- Email-->
+      <div class="col-md-4 col-sm-12">
+        <label for="inputEmail">Email</label>
+      </div>
+      <div class="col-md-8 col-sm-12">
+        <input type="email"  formControlName="email" id="email" placeholder="johndoe@email.com" class="form-control">
+      </div>
+    </div>
+
+    <div class="row input"> <!-- Mobile-->
+      <div class="col-md-4">
+        <label for="mobile">Mobile</label>
+      </div>
+      <div class="col-md-8">
+        <input type="phone"  formControlName="mobile" id="mobile" placeholder="+91 12345 12345" class="form-control">
+      </div>
+    </div>
+
+    <div class="row input"> <!-- Customer Id-->
+      <div class="col-md-4 col-sm-12">
+        <label for="inputEmail">Customer ID</label>
+      </div>
+      <div class="col-md-8 col-sm-12">
+        <input type="text"  formControlName="customerId" id="customerId" placeholder="12345 ABCD123 12" class="form-control">
+      </div>
+    </div>
+      
+    <div class="row radio"> <!-- Membership-->
+      <div class="col-4">
+        <label for="memebership">Memebership</label>
+      </div>
+      <div class="col-8">
+        <div class="row package">
+          <div class="col">
+            <a (click)="markActivePackage('classic')" [ngClass]="classic ? 'active-package' : 'inactive-package'"></a>
+            <span class="membership-label">Classic</span>
+          </div>
+          <div class="col">
+            <a (click)="markActivePackage('silver')" [ngClass]="silver ? 'active-package' : 'inactive-package'"></a>
+            <span class="membership-label">Silver</span>
+          </div>
+          <div class="col">
+            <a (click)="markActivePackage('gold')" [ngClass]="gold ? 'active-package' : 'inactive-package'"></a>
+            <span class="membership-label">Gold</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row buttons">
+      <div class="col-md-6">
+        <button type="button" class="btn form-btn cancel" (click)="resetForm()">CANCEL</button>
+      </div>
+      <div class="col-md-6">
+        <button type="button" class="btn form-btn save">SAVE</button>
+      </div>
+    </div>
+
+      <!-- <div class="col-lg-4 col-md-6 col-sm-12">
+        <button type="button" class="btn form-btn cancel" (click)="resetForm()">Cancel</button>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12">  
+        <button type="button" class="btn form-btn save">Save</button>
+      </div> -->
+  </form>
+
+
+</div>

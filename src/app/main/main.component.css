@@ -1,0 +1,25 @@
+.main_content {
+	background-color: #ff9200;
+	padding: 80px 40px 40px 40px;
+	height: 100%;
+	border-radius: 0 40px 40px 0;
+
+}
+
+.main_title {
+	font-weight: bold;
+	font-size: 2em;
+	margin: 40px 0;
+}
+
+.main_content {
+	font-weight: 300;
+	line-height: 2;
+	font-size: 1em;
+}
+
+@media only screen and (max-width: 767px) {
+	.main_content{
+		border-radius: 0;
+	}
+}

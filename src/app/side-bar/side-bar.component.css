@@ -1,0 +1,70 @@
+.side-bar {
+	background-color: #ffd500;
+	text-align: center;
+	padding: 20px;
+	height: 100%;
+	border-radius: 40px 0 0 40px;
+}
+
+.profile_title {
+	font-weight: bold;
+	font-size: 1.4em;
+}
+
+.profile_placeholder {
+	background: url('../../assets/img/profile-placeholder.svg') no-repeat center;
+	background-size: 100% 100%;
+	width: 200px;
+	height: 200px;
+	margin: 80px auto;
+} 
+
+.open {
+	-moz-transform: scaleX(-1);
+	-o-transform: scaleX(-1);
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+}
+
+
+.menu_icon {
+	width: 64px;
+	height: 64px;
+	object-fit: contain;
+	margin: 80px 0;
+}
+
+.menu_icon:hover {
+	width: 66px;
+	height: 66px;
+}
+
+.tagline {
+	font-weight: 400;
+}
+
+.link {
+	font-weight: bold;
+	text-decoration: none;
+	border-bottom: 2px solid #000;
+	color: #000;
+}
+
+
+@media only screen and (max-width: 767px) {
+	.menu_icon {
+		-moz-transform: rotate(90deg);
+		-o-transform: rotate(90deg);
+		-webkit-transform: rotate(90deg);
+		transform: rotate(90deg);
+	}
+	.open {
+		-moz-transform: rotate(-90deg);
+		-o-transform: rotate(-90deg);
+		-webkit-transform: rotate(-90deg);
+		transform: rotate(-90deg);
+	}
+	.side-bar{
+		border-radius: 0;
+	}
+}
