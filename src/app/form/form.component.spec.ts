@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FormComponent } from './form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 
 describe('FormComponent', () => {
   let component: FormComponent;
@@ -8,7 +10,11 @@ describe('FormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FormComponent ]
+      declarations: [ FormComponent ],
+      imports: [
+        BrowserModule,
+        ReactiveFormsModule
+      ]
     })
     .compileComponents();
   }));
@@ -22,4 +28,5 @@ describe('FormComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
 });

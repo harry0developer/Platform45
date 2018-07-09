@@ -7,5 +7,6 @@ import { StateService } from './state.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  title: string = "app"
 }
 
