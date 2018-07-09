@@ -1,13 +1,26 @@
 <div class="form" *ngIf="!toggle">
   <form [formGroup]="userForm">
-    <div class="row input"> <!-- Name-->
+
+    <div class="row input form-group"> <!-- Name-->
       <div class="col-md-4 col-sm-12">
-        <label for="inputEmail">Email</label>
+        <label for="name" 
+        [ngClass]="userForm.controls.name.errors && 
+          (userForm.controls.name.dirty || userForm.controls.name.touched) ? 'label-error' : ''">
+          Name
+        </label>
       </div>
       <div class="col-md-8 col-sm-12">
-        <input type="text"  formControlName="name" id="name" placeholder="harry@email.com" class="form-control">
+        <input type="text" placeholder="John Doe" formControlName="name"
+        [ngClass]="userForm.controls.name.errors && 
+        (userForm.controls.name.dirty || userForm.controls.name.touched) ? 'form-control form-control-error' : 'form-control'">
+    
+        <div class="error-message" *ngIf="userForm.controls.name.errors && 
+          (userForm.controls.name.dirty || userForm.controls.name.touched)">
+          <p *ngIf="userForm.controls.name.errors.required">Your name is required</p>
+          <p *ngIf="userForm.controls.name.errors.minlength">Your name is too short</p>
+        </div>
       </div>
-    </div>
+    </div> 
 
     <div class="row radio"> <!-- Gender-->
       <div class="col-4">
@@ -32,35 +45,70 @@
         <label for="dateOfBirth">Date of Birth</label>
       </div>
       <div class="col-md-8 col-sm-12">
-        <input type="date"  formControlName="dob" id="dob" placeholder="01/01/2018" class="form-control">
+        <input type="date" id="dob" placeholder="01/01/2018" class="form-control">
       </div>
     </div>
 
-    <div class="row input"> <!-- Email-->
+    <div class="row input form-group"> <!-- Email-->
       <div class="col-md-4 col-sm-12">
-        <label for="inputEmail">Email</label>
+        <label for="email" 
+          [ngClass]="userForm.controls.email.errors && 
+            (userForm.controls.email.dirty || userForm.controls.email.touched) ? 'label-error' : ''">
+            Email
+        </label>
       </div>
       <div class="col-md-8 col-sm-12">
-        <input type="email"  formControlName="email" id="email" placeholder="johndoe@email.com" class="form-control">
+        <input type="email" id="email" formControlName="email" placeholder="johndoe@email.com" 
+          [ngClass]="userForm.controls.email.errors && 
+            (userForm.controls.email.dirty || userForm.controls.email.touched) ? 'form-control form-control-error' : 'form-control'">
+        
+        <div class="error-message" *ngIf="userForm.controls.email.errors && 
+          (userForm.controls.email.dirty || userForm.controls.email.touched)">
+          <p *ngIf="userForm.controls.email.errors.required">Email is required</p>
+          <p *ngIf="userForm.controls.email.errors.pattern">Invalid email address </p>
+        </div>
       </div>
     </div>
 
     <div class="row input"> <!-- Mobile-->
-      <div class="col-md-4">
-        <label for="mobile">Mobile</label>
-      </div>
-      <div class="col-md-8">
-        <input type="phone"  formControlName="mobile" id="mobile" placeholder="+91 12345 12345" class="form-control">
-      </div>
+      <div class="col-md-4 col-sm-12">
+          <label for="mobile" 
+          [ngClass]="userForm.controls.mobile.errors && 
+            (userForm.controls.mobile.dirty || userForm.controls.mobile.touched) ? 'label-error' : ''">
+            Mobile
+          </label>
+        </div>
+      <div class="col-md-8 col-sm-12">
+        <input type="phone" id="mobile" formControlName="mobile" placeholder="+91 12345 12345"
+          [ngClass]="userForm.controls.mobile.errors && 
+            (userForm.controls.mobile.dirty || userForm.controls.mobile.touched) ? 'form-control form-control-error' : 'form-control'">
+        
+        <div class="error-message" *ngIf="userForm.controls.mobile.errors && 
+          (userForm.controls.mobile.dirty || userForm.controls.mobile.touched)">
+          <p *ngIf="userForm.controls.mobile.errors.required">Mobile number is required</p>
+          <p *ngIf="userForm.controls.mobile.minlength">Invalid mobile number </p>
+        </div>
+      </div> 
     </div>
 
     <div class="row input"> <!-- Customer Id-->
       <div class="col-md-4 col-sm-12">
-        <label for="inputEmail">Customer ID</label>
-      </div>
+          <label for="customerId" 
+          [ngClass]="userForm.controls.customerId.errors && 
+            (userForm.controls.customerId.dirty || userForm.controls.customerId.touched) ? 'label-error' : ''">
+            Customer ID
+          </label>
+        </div>
       <div class="col-md-8 col-sm-12">
-        <input type="text"  formControlName="customerId" id="customerId" placeholder="12345 ABCD123 12" class="form-control">
-      </div>
+        <input type="phone" id="customerId" formControlName="customerId" placeholder="12345 ABCD123 12"
+          [ngClass]="userForm.controls.customerId.errors && 
+            (userForm.controls.customerId.dirty || userForm.controls.customerId.touched) ? 'form-control form-control-error' : 'form-control'">
+          <div class="error-message" *ngIf="userForm.controls.customerId.errors && 
+            (userForm.controls.customerId.dirty || userForm.controls.customerId.touched)">
+            <p *ngIf="userForm.controls.customerId.errors.required">Customer ID is required</p>
+            <p *ngIf="userForm.controls.customerId.minlength">Invalid customer ID </p>
+          </div>
+      </div> 
     </div>
       
     <div class="row radio"> <!-- Membership-->
@@ -93,13 +141,6 @@
         <button type="button" class="btn form-btn save">SAVE</button>
       </div>
     </div>
-
-      <!-- <div class="col-lg-4 col-md-6 col-sm-12">
-        <button type="button" class="btn form-btn cancel" (click)="resetForm()">Cancel</button>
-      </div>
-      <div class="col-lg-4 col-md-6 col-sm-12">  
-        <button type="button" class="btn form-btn save">Save</button>
-      </div> -->
   </form>
 
 

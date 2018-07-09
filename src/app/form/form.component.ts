@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { StateService } from '../state.service';
 
 @Component({
@@ -8,30 +8,33 @@ import { StateService } from '../state.service';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
-  userForm: any;
+  userForm: FormGroup;
   toggle: boolean;
   male: boolean = false;
   female: boolean = false;
   classic: boolean = true;
   silver: boolean = false;
   gold: boolean = false;
-  constructor(private stateService: StateService) { }
+
+  emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
+
+  constructor(private stateService: StateService, private formBulder: FormBuilder) { 
+    this.userForm = this.formBulder.group({
+      'name' : [null, [Validators.required, Validators.minLength(3)]],
+      'gender' : [null, Validators.required],
+      'dateOfBirth' : [null, Validators.required],
+      'email' : [null, [Validators.required, Validators.pattern(this.emailPattern)] ],
+      'mobile' : [null, [Validators.required, Validators.minLength(10)]],
+      'customerId' : [null, [Validators.required, Validators.minLength(14)]],
+      'memebership' : [null, Validators.required],
+    })
+  }
 
   ngOnInit() {
     this.stateService.openState.subscribe(state => {
       this.toggle = state;
     });
-    this.userForm = new FormGroup({
-      name: new FormControl(),
-      gender: new FormControl(),
-      dob: new FormControl(),
-      email: new FormControl(),
-      mobile: new FormControl(),
-      customerId: new FormControl(),
-      memebership: new FormControl()
-    });
   }
-
   resetForm() { 
     this.userForm.reset();
   } 

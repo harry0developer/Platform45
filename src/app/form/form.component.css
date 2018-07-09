@@ -127,6 +127,30 @@ input:hover {
 	border: #b3c1ce solid 1.4px ;
 }
 
+.form-control-error {
+	border: 2px solid #ff9200;
+}
+
+.label-error{
+	color: #ff9200;
+}
+.label-error::before { 
+    content: "\2022";
+}
+
+.dot {
+	height: 25px;
+	width: 25px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+}
+.error-message {
+	color: #ff9200;
+	float: right;
+}
+
+
 @media only screen and (max-width: 991px) {
 	.buttons {
 		width: 85%;
@@ -142,4 +166,8 @@ input:hover {
 	.buttons button{
 		width: 100%;
 	}
+
+    .form {
+        margin: 0;
+    }
 }
